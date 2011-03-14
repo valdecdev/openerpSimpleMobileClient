@@ -5,14 +5,15 @@ The aim of this project was to get a simple interface allowing contacts/partners
 on the web formatted for mobile phones.
 
 The proof of concept solution here uses the following
-- Python		http://www.python.org
-- CherryPy 		http://www.cherrypy.org
-- JQueryMobile		http://jquerymobile.com
+- Python		http://www.python.org *
+- CherryPy 		http://www.cherrypy.org *
+- JQueryMobile		http://jquerymobile.com **
 - OpenERP 		http://www.openerp.com
 
-* Please note: If you have a working OpenERP Web client (server?) installed, Python, CherryPy are already installed.
-
 and consists of one file ContactClient.py which acts both as a client to OpenERP and as a webserver for the mobile site. 
+
+* Please note: If you have a working OpenERP Web client installed, Python and CherryPy are already installed.
+** No installation is requred for JQueryMobile - this is called implicitly within the code.
 
 
 Configuration
