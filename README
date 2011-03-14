@@ -1,3 +1,71 @@
 Simple Mobile Client(webserver) for OpenERP Contacts
 ----------------------------------------------------
 
+The aim of this project was to get a simple interface allowing contacts/partners from an OpenERP server to be available 
+on the web formatted for mobile phones.
+
+The proof of concept solution here uses the following
+- Python		http://www.python.org
+- CherryPy 		http://www.cherrypy.org
+- JQueryMobile		http://jquerymobile.com
+- OpenERP 		http://www.openerp.com
+
+* Please note: If you have a working OpenERP Web client (server?) installed, Python, CherryPy are already installed.
+
+and consists of one file ContactClient.py which acts both as a client to OpenERP and as a webserver for the mobile site. 
+
+
+Configuration
+-------------
+Use a text editor to edit the configuration variables in the ContactClient.py file
+
+openerp_ip      - ip address for the openerp server (default: 127.0.0.1
+server_ip       - ip address / url to serve the website (default: 0.0.0.0) (eg: your.domaim.com)
+server_port     - port for the webclient (default: 8081)
+session_timeout - timeout for the sessions (default: 5 mins)
+db		- put your database name here (default: 'yourdatbasehere')
+pagelimit	- max number of contact/partner results to show (default: 20)
+
+
+Installing and Running the software
+-----------------------------------
+To install 
+- Extract the archive or git clone git://github.com/valdecdev/openerpSimpleMobileClient.git /directory/on/your/system
+to a system which has CherryPy and Python already installed.  (possibly a machine with the OpenERP Web Client installed)
+
+To run
+- cd /directory/on/your/system
+- cd src
+- python ContactClient.py & (runs the client in the background on a linux server)
+
+
+Using the software on your mobile
+---------------------------------
+
+Check that you can  accept cookies from either visited websites or all websites.
+(iPhone: Settings > Safari > Accept Cookies   either set to 'From visited' or 'Always')
+
+Open your web browser on your mobile and enter 'server-ip:server_port' as the URL (or 'URL:server-port' accordingly).
+
+After logging in, you can change the view from contact names to partner names by clicking the search button 
+and tap the 'Search in' button to change to 'Partner'. 
+Leave the 'Search' field empty and press 'Submit'.
+
+In Contact view, clicking on a contact name initiates a pop-up window which asks for permission to call.
+Clicking on the '+' symbol to the right of the contact name opens the email client with the corresponding 'To:' 
+email address of the contact.
+
+iPhone: pressing and holding the contact name opens up the iphone standard dialog with options to add 
+the phone number to the iPhone addressbook, SMS etc.
+
+
+
+Notes
+-----
+- Currently ignores contacts which have no partner_id.  This is because OpenERP allows Users of the system to have addresses in the res_partner_address table.
+
+ToDo
+----
+- Maybe a database choice on login?
+- Other bits and pieces :)
+
